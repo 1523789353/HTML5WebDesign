@@ -1,0 +1,4 @@
+*.md text eol=crlf
+*.htm text eol=crlf
+*.html text eol=crlf
+*.css text eol=crlf
