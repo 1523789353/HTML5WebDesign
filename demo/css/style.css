@@ -1,0 +1,87 @@
+body {
+	font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+	width: 100vw;
+	height: 100vh;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+/* 所有id样式 */
+#Head {
+	width: 100%;
+	top: 0;
+	height: 5rem;
+	background: #FFF;
+	box-shadow: 0px 0px 10px 0px gray;
+	/* 阴影 水平偏移 垂直偏移 模糊距离 阴影大小 阴影颜色 inset(可选:内阴影) */
+}
+#Content {
+	flex: 1;
+	width: 100%;
+	min-height: 100%;
+	/* 防止Footer缩上来 */
+	margin: -5rem 0 -6.5rem 0;
+	/* 内边距,顶起内部元素 */
+	padding: 5rem 7.5% 6.5rem 7.5%;
+	/* 左右一共留出15%空间,上下留出Head和Footer的空间 */
+}
+#Footer {
+	width: 100%;
+	height: 6.5rem;
+	box-shadow: grey 0px 0px 30px;
+}
+
+
+
+/* 所有class样式 */
+.LeftAlign {
+	float: left;
+}
+.RightAlign {
+	float: right;
+	padding-right: 5rem;
+}
+/* a标签方框按钮样式 */
+a.HomeBottom, a.LoginBottom, a.RegisterBottom, a.SideBarBottom {
+	display: inline-block;
+	height: 5rem;
+	width: 7.5rem;
+	text-align: center;
+	line-height: 5rem;
+	text-decoration: none;
+	background: #DDD;
+	transition-property: background-color;
+	transition-duration: .25s;
+}
+a.HomeBottom:hover, a.LoginBottom:hover, a.RegisterBottom:hover, a.SideBarBottom:hover {
+	background: cyan;
+}
+/* a标签禁用样式 */
+a.disabled {
+	cursor: not-allowed;
+}
+a.disabled:hover {
+	background: red;
+	filter: grayscale(0.5);
+}
+/* 页面切换 */
+.HomeView, .LoginView, .RegisterView, .SideBarView {
+	display: none;
+	pointer-events: none;
+}
+.HomeView:target, .LoginView:target, .RegisterView:target {
+	display: block;
+	pointer-events: auto;
+}
+/* 侧边栏-懒得写了 */
+.SideBarView:target {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0,0,0,.5);
+}
