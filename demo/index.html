@@ -8,16 +8,17 @@
 		<link rel="stylesheet" href="./source/css/style.css">
 	</head>
 
-	<body>
+	<body οndragstart='return false' onselectstart ='return false'>
 		<!-- 头部工具栏 -->
 		<div id="Head">
 			<div class="LeftAlign">
-				<a class="SideBarBottom disabled" οnclick herf="#SideBar"><font size="6.5rem">⚙</font></a>
+				<a class="SideBar Bottom Disabled" title="侧边工具栏" href="#SideBar">⚙</a>
 			</div>
 			<div class="RightAlign">
-				<a class="HomeBottom" href="#HomePage">首页</a>
-				<a class="LoginBottom" href="#LoginPage">登录</a>
-				<a class="RegisterBottom" href="#RegisterPage">注册</a>
+				<a class="Home Bottom" title="访问首页" href="#HomePage">首页</a>
+				<a class="Login Bottom" title="登录帐号" href="#LoginPage">登录</a>
+				<a class="Register Bottom" title="注册帐号" href="#RegisterPage">注册</a>
+				<a class="Favorite Bottom Disabled" title="收藏">★</a>
 			</div>
 		</div>
 		<!-- 中间内容 -->
@@ -28,6 +29,12 @@
 				<h1>这里是首页</h1>
 				<h2>施工中...</h2>
 				<h3>还没有写好</h3>
+				<a class="Disabled" href="https://www.baidu.com/">这是一条永远点不开的链接</a><br>
+				<span>啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧啊吧</span><br />
+				<span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br />
+				<span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br />
+				<span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br />
+				<span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br />
 				<span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br />
 				<span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br />
 				<span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br /><span>啊吧啊吧啊吧</span><br />
@@ -44,11 +51,12 @@
 		</div>
 		<!-- 底部 -->
 		<div id="Footer">
-			<p>这里是页面底部</p>
+			<p>这里是页脚</p>
 		</div>
 
 		<!-- 侧边栏-懒得写了 -->
 		<div id="SideBar" class="SideBarView">
+			<span>这是侧边栏的遮罩层</span>
 		</div>
 	</body>
 </html>

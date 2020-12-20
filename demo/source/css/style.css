@@ -1,38 +1,53 @@
+@keyframes fadeIn {
+	0% {opacity: 0;};
+	100% {opacity: 1;}
+}
+* {animation: .5s fadeIn 0s 1;}
+
 body {
 	font-family: "Segoe UI", Tahoma, Arial, sans-serif;
-	width: 100vw;
-	height: 100vh;
-	min-width: 570px;
 	flex: 1;
+	width: 95vw;
+	min-width: 300px;
+	height: 100vh;
 	justify-content: center;
 	align-items: center;
+	margin: 0 2.5% 0 2.5%;
 }
 
 
 
 /* 所有id样式 */
 #Head {
-	width: 100%;
+	/* 悬浮样式
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin: 0 2.5% 0 2.5%;
+	*/
+   
+   /* 紧贴样式 */
 	top: 0;
 	height: 5rem;
-	background: #FFF;
-	box-shadow: 0px 0px 10px 0px gray;
+	border-radius: 0 0 10px 10px;
+	/* 圆角:左上 右上 右下 左下 */
+	box-shadow: 0 0 10px 1px gray;
 	/* 阴影 水平偏移 垂直偏移 模糊距离 阴影大小 阴影颜色 inset(可选:内阴影) */
 }
 #Content {
 	flex: 1;
-	width: 100%;
 	min-height: 100%;
 	/* 防止Footer缩上来 */
-	margin: -5rem 0 -6.5rem 0;
+	margin: -4rem 0 -5.5rem 0;
 	/* 内边距,顶起内部元素 */
-	padding: 5rem 7.5% 6.5rem 7.5%;
+	padding: 5rem 5% 6.5rem 5%;
 	/* 左右一共留出15%空间,上下留出Head和Footer的空间 */
 }
 #Footer {
-	width: 100%;
 	height: 6.5rem;
-	box-shadow: grey 0px 0px 30px;
+	border-radius: 10px 10px 0 0;
+	padding: 5px 5px;
+	box-shadow: 0 0 10px 1px gray;
 }
 
 
@@ -56,46 +71,72 @@ body {
 /* 头部左右对齐 */
 .LeftAlign {
 	float: left;
+	height: inherit;
+	border-radius: 0 0 0 10px;
 }
 .RightAlign {
 	float: right;
-	padding-right: 3rem;
+	height: inherit;
+	border-radius: 0 0 10px 0;
 }
 /* a标签方框按钮样式 */
-a.HomeBottom, a.LoginBottom, a.RegisterBottom, a.SideBarBottom {
+a.Bottom {
 	display: inline-block;
-	height: 5rem;
-	width: 7.5rem;
+	height: inherit;
+	width: 8vw;
+	min-width: 3.5rem;
 	text-align: center;
-	line-height: 5rem;
+	line-height: 4em;
 	text-decoration: none;
 	background: #DDD;
 	transition-property: background-color;
 	transition-duration: .25s;
+	font-size: 20px;
+	user-select: none;
 }
-a.HomeBottom:hover, a.LoginBottom:hover, a.RegisterBottom:hover, a.SideBarBottom:hover {
+a.Bottom:hover {
 	background: cyan;
 }
+a.Bottom:active {
+	color: red;
+}
+/* 特殊 */
+a.SideBar {
+	font-size: 32px;
+	line-height: 2.5em;
+	border-radius: inherit;
+}
+a.Favorite {
+	width: 4vw;
+	min-width: 1.5em;
+	border-radius: inherit;
+}
+
 /* a标签禁用样式 */
-a.disabled {
+a.Disabled {
 	cursor: not-allowed;
+	pointer-events: auto;
 }
-a.disabled:hover {
+a.Disabled:hover {
 	background: red;
-	filter: grayscale(0.5);
 }
+a.Disabled:active {
+	/* 点击时不响应鼠标事件 */
+	pointer-events: none;
+}
+
 /* 页面切换 */
 .HomeView, .LoginView, .RegisterView, .SideBarView {
 	display: none;
 	pointer-events: none;
 }
-.HomeView:target, .LoginView:target, .RegisterView:target {
+.HomeView:target, .LoginView:target, .RegisterView:target, .SideBarView:target {
 	display: block;
 	pointer-events: auto;
 }
 /* 侧边栏-懒得写了 */
 .SideBarView:target {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
