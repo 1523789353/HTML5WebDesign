@@ -1,0 +1,137 @@
+body {
+	flex: 1;
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+}
+
+#header, #footer {
+	width: 100vw;
+	min-height: 24px;
+	text-align: center;
+	background: #000;
+	line-height: 24px;
+}
+
+#footer {
+	background: #222;
+}
+
+#content {
+	width: 70vw;
+	margin: 0 15%;
+	align-items: center;
+}
+
+/* 页眉导航条属性 */
+#topBar {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+}
+
+#topBar li {
+	display: inline-block;
+	padding: 0 2px 0 2px;
+}
+
+#topBar li a {
+	color: #FFF;
+	text-decoration: none;
+	font-size: 12px;
+}
+
+/* 页眉属性到此结束 */
+
+/* 页面主题元素属性 */
+#Img1, #Img2, #Img3 {
+	width: inherit;
+}
+
+.Passage {
+	margin-bottom: 8px;
+}
+
+.Passage h3 {
+	text-align: center;
+	margin: 8px 0;
+}
+
+.Passage p {
+	font-size: 13px;
+	text-indent: 2em;
+}
+
+.LinksList {
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+}
+
+.LinksList li>a {
+	color: #000;
+	text-decoration: none;
+}
+
+.LinksList li {
+	padding: 8px 0;
+}
+
+.odd {
+	background: #FFF;
+}
+.even {
+	background: #DDD;
+}
+
+#List1 {
+	border: #F00 1px solid;
+	box-sizing: border-box;
+}
+
+#List1>.Title {
+	margin: 0;
+	padding: 8px 0;
+	text-align: center;
+	background: #F00;
+	color: #FFF;
+}
+
+#List1>.LinksList {
+	list-style: none;
+}
+
+#List1>.LinksList li>a {
+	margin-left: 24px;
+}
+
+#List2 {
+	border: #38F 1px solid;
+	box-sizing: border-box;
+}
+
+#List2>.Title {
+	margin: 0;
+	padding: 8px 0;
+	text-align: center;
+	background: #38F;
+	color: #FF0;
+}
+
+#List2>.LinksList {
+	margin-left: 24px;
+}
+
+#List2>.LinksList li {
+	border-bottom: #888 1px dashed;
+}
+
+/* 页面属性结束 */
+
+/* 页脚属性 */
+#FooterText {
+	color: #FFF;
+	font-size: 12px;
+}
