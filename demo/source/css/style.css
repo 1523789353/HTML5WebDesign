@@ -1,8 +1,16 @@
 @keyframes fadeIn {
-	0% {opacity: 0;};
-	100% {opacity: 1;}
+	0% {
+		opacity: 0;
+		filter: blur(16px);
+	};
+	100% {
+		opacity: 1;
+		filter: none;
+	};
 }
-* {animation: .5s fadeIn 0s 1;}
+* {
+	animation: .5s fadeIn 0s 1;
+}
 
 body {
 	font-family: "Segoe UI", Tahoma, Arial, sans-serif;
@@ -38,9 +46,9 @@ body {
 	flex: 1;
 	min-height: 100%;
 	/* 防止Footer缩上来 */
-	margin: -4rem 0 -5.5rem 0;
+	margin: -5rem 0 -6.5rem 0;
 	/* 内边距,顶起内部元素 */
-	padding: 5rem 5% 6.5rem 5%;
+	padding: 5.5rem 5% 7rem 5%;
 	/* 左右一共留出15%空间,上下留出Head和Footer的空间 */
 }
 #Footer {
@@ -52,9 +60,9 @@ body {
 
 
 
-/* 所有class样式 */
+/* 以下是所有class样式 */
 /* 阻止IE访问 */
-.IE {
+#IE {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -68,7 +76,7 @@ body {
 	cursor: not-allowed;
 }
 
-/* 头部左右对齐 */
+/* 头部左右对齐区 */
 .LeftAlign {
 	float: left;
 	height: inherit;
@@ -85,12 +93,12 @@ a.Bottom {
 	height: inherit;
 	width: 8vw;
 	min-width: 3.5rem;
+	background: #DDD;
 	text-align: center;
 	line-height: 4em;
 	text-decoration: none;
-	background: #DDD;
 	transition-property: background-color;
-	transition-duration: .25s;
+	transition-duration: .5s;
 	font-size: 20px;
 	user-select: none;
 }
@@ -100,7 +108,7 @@ a.Bottom:hover {
 a.Bottom:active {
 	color: red;
 }
-/* 特殊 */
+/* a标签特定样式 */
 a.SideBar {
 	font-size: 32px;
 	line-height: 2.5em;
@@ -111,8 +119,11 @@ a.Favorite {
 	min-width: 1.5em;
 	border-radius: inherit;
 }
+a.Back {
+	border-radius: 0 0 10px 0;
+}
 
-/* a标签禁用样式 */
+/* a标签"被禁用"样式 */
 a.Disabled {
 	cursor: not-allowed;
 	pointer-events: auto;
@@ -121,11 +132,10 @@ a.Disabled:hover {
 	background: red;
 }
 a.Disabled:active {
-	/* 点击时不响应鼠标事件 */
 	pointer-events: none;
 }
 
-/* 页面切换 */
+/* 页面切换,默认隐藏,被选中时才显示 */
 .HomeView, .LoginView, .RegisterView, .SideBarView {
 	display: none;
 	pointer-events: none;
@@ -134,12 +144,115 @@ a.Disabled:active {
 	display: block;
 	pointer-events: auto;
 }
-/* 侧边栏-懒得写了 */
-.SideBarView:target {
-	position: absolute;
-	top: 0;
+
+
+
+/* 侧边栏-第一套方案 */
+@keyframes SlideIn {
+	0% {
+		width: 0;
+	};
+	100% {
+		width: 20vw;
+	};
+}
+@keyframes ShadowSlideIn {
+	0% {
+		width: 100vw;
+		opacity: 0;
+	};
+	100% {
+		width: 80vw;
+		opacity: .5;
+	};
+}
+.SideBarView {
+	position: fixed;
 	left: 0;
+	width: 0;
+	height: 100vh;
+	background: #FFF;
+	box-shadow: 0 0 10px 1px gray;
+	overflow: hidden;
+	z-index: 2;
+}
+.Shadow {
+	position: fixed;
+	top: 0;
 	right: 0;
-	bottom: 0;
+	width: 0;
+	height: 100vh;
+	backdrop-filter: blur(2px);
 	background: rgba(0,0,0,.5);
+	cursor: default;
+	z-index: 1;
+}
+.SideBarView:target {
+	animation: .5s SlideIn 0s 1;
+	width: 20%;
+}
+.SideBarView:target+.Shadow, .SideBarView2:hover+.Shadow{
+	animation: .5s ShadowSlideIn 0s 1;
+	width: 80%;
+}
+.SideBarViewToolBar {
+	top: 0;
+	height: 5rem;
+	margin: 0 0 5px 0;
+}
+/* 第二套侧边栏样式方案 */
+.SideBarView2 {
+	position: fixed;
+	left: 0;
+	width: 20vw;
+	height: 100vh;
+	background: #FFF;
+	box-shadow: 0 0 10px 1px gray;
+	overflow: hidden;
+	transform:translate(-19vw,0px);
+	transition: all .5s ease;
+	z-index: 2;
+}
+.SideBarView2:hover {
+	transform:translate(0px,0px)
+}
+.SideBarView2>.SideBarViewToolBar, .SideBarView2+.Shadow+#Head>.LeftAlign>.SideBar {
+	display: none;
+}
+
+
+.BetterCheckbox {
+	width: 24px;
+	height: 24px;
+}
+.BetterCheckbox>input {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	opacity: 0;
+}
+.BetterCheckbox>input+img {
+	position: absolute;
+	width: inherit;
+	height: inherit;
+	border: #767676 1px solid;
+	border-radius: 2px;
+	background: #FFF;
+	pointer-events: none;
+}
+.BetterCheckbox>input:hover+img {
+	border-color: #4F4F4F;
+}
+.BetterCheckbox>input:active+img {
+	border-color: #8D8D8D;
+}
+.BetterCheckbox>input:checked+img {
+	border-width: 0;
+	background: #0088FF;
+}
+.BetterCheckbox>input:checked:hover+img {
+	background: #0062CC;
+}
+.BetterCheckbox>input:checked:active+img {
+	background: #3793FF;
 }

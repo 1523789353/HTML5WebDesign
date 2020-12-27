@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册页面</title>
+	</head>
+	<body>
+		<p align="center">
+			<img src="./images/wotaoreg.PNG"/>
+		</p>
+		<table width="950" border="1" align="center" cellspacing="0" cellpadding="0" bordercolor="#99CCFF">
+			<form name="userfrm" action="register_success.htm" method="post" onsubmit="return validateform()">
+				<tr class="rigister_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">名字：</td>
+					<td width="507" align="left" bgcolor="#E7E3E7"><input name="fname" type="text" class="register_textbroader" id="fname" size="24"/></td>
+				</tr>
+				<tr class="rigister_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">姓氏：</td>
+					<td align="left" bgcolor="#E7E3E7"><input name="lname" type="text" class="register_textbroader" id="lname" size="24"/></td>
+				</tr>
+				<tr class="rigister_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">登录名：</td>
+					<td align="left" bgcolor="#E7E3E7"><input name="sname" type="text" class="register_textbroader" id="sname" size="24"/>（可包含a-z、0-9和下划线）</td>
+				</tr>
+				<tr class="rigister_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">密码：</td>
+					<td align="left" bgcolor="#E7E3E7"><input name="pass" type="password" class="register_textbroader" id="pass" size="26"/>（至少包含6个字符）</td>
+				</tr>
+				<tr class="rigister_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">再次输入密码：</td>
+					<td align="left" bgcolor="#E7E3E7"><input name="rpass" type="password" class="register_textbroader" id="rpass" size="26"/></td>
+				</tr>
+				<tr class="rigister_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">电子邮箱：</td>
+					<td align="left" bgcolor="#E7E3E7"><input name="email" type="text" class="register_textbroader" id="email" size="24"/>（必须包含@字符）</td>
+				</tr>
+				<tr class="rigister_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">性别：</td>
+					<td align="left" bgcolor="#E7E3E7">
+						<input type="radio" name="gen" value="男" checked/>
+						<img src="images/Male.gif" width="23" height="21">男 &nbsp;
+						<input type="radio" name="gen" value="女" class="input"/>
+						<img src="images/Female.gif" width="23" height="21">女
+					</td>
+				</tr>
+				<tr class="rigister_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">爱好：</td>
+					<td align="left" bordercolor="#E7E3E7">
+						<label>
+							<input type="checkbox" name="checkbox" value="checkbox">
+						</label>
+							运动 &nbsp;&nbsp;
+						<label>
+							<input type="checkbox" name="checkbox2" value="checkbox">
+						</label>
+							聊天 &nbsp;&nbsp;
+						<label>
+							<input type="checkbox" name="checkbox22" value="checkbox">
+						</label>
+							玩游戏
+					</td>
+				</tr>
+				<tr class="rigister_table_line">
+					<td width="160" align="right" bgcolor="#E7FBFF">出生日期：</td>
+					<td align="left" bordercolor="#E7E3E7">
+						<input name="byear" class="register_textbroader" id="byear" onfocus="this.value=''" value="yyyy" size="4" maxlength="4"/>&nbsp;年&nbsp;&nbsp;
+						<select name="bmon">
+							<option value="" selected>[选择月份]
+							<option value="0">一月
+							<option value="1">二月
+							<option value="2">三月
+							<option value="3">四月
+							<option value="4">五月
+							<option value="5">六月
+							<option value="6">七月
+							<option value="7">八月
+							<option value="8">九月
+							<option value="9">十月
+							<option value="10">十一月
+							<option value="11">十二月
+						</select>&nbsp;月&nbsp;&nbsp;
+						<input name="bday" class="register_textbroader" id="bday" onfocus="this.value=''" value="dd" size="2" maxlength="2"/>
+					</td>
+				</tr>
+				<tr class="rigister_table_line">
+					<td width="160" height="35" align="right" bgcolor="#E7FBFF">
+						<input type="reset" name="reset" value="重填">
+					</td>
+					<td align="left" bgcolor="#E7E3E7">
+						<input type="submit" name="button" value="同意以下服务条款,提交注册信息"/>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<table width="760" border="0">
+							<tr>
+								<td height="36">
+									<h4>
+										<img src="images/read.gif" width="35" height="26">阅读我淘网服务协议
+									</h4>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<textarea name="textarea" rows="6" cols="80">欢迎阅读服务条款协议，本协议阐述之条款和条件适用于您使用wotao.com网站的各
+种工具和服务。
+本服务协议双方为我淘与我淘用户，本服务协议具有合同效力。
+我淘网的权利和义务
+1.我淘网有义务在现有技术上维护整个网上交易平台的正常运行，并努力提升和改进
+技术，使用户的网上交易活动顺利。
+2.对用户在注册使用我淘网交易平台中所遇到的与交易或注册有关的问题及反馈的情
+况，我淘网应及时做出回复
+3.对于在我淘网网上交易平台的不当行为或其他任何我淘网认为应当终止服务的情况，
+我淘网有权随时做出删除相关信息、终止服务提供等处理，而无需征得用户的同意。
+4.因网上交易平台的特殊性，我淘网没有义务对所有用户的注册资料、所有的交易行
+为以及与交易有关的其他事项进行事先审查</textarea>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</form>
+		</table>
+	</body>
+</html>

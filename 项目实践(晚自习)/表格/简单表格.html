@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表格</title>
+		<style type="text/css">
+			
+		</style>
+	</head>
+	<body>
+		<!-- 我给标格上了个禁止选择文字效果 -->
+		<table border="1" style="text-align: center; width: 80vw; height: 80vh;margin: 10vh 10vw 10vh 10vw;" onselectstart ='return false'>
+			<!--tr:table row:行-->
+			<!--th:table head:表头-->
+			<!--td:table data:表内数据-->
+			<tr>
+				<th colspan="3">基本信息</th>
+				<th colspan="3">成绩</th>
+			</tr>
+			<tr>
+				<td>班级</td>
+				<td>学号</td>
+				<td>姓名</td>
+				<td>语文</td>
+				<td>数学</td>
+				<td>英语</td>
+			</tr>
+			<tr>
+				<td rowspan="2">4班</td>
+				<td>01</td>
+				<td>陈杨广</td>
+				<td rowspan="2" colspan="2">良好</td>
+				<td>及格</td>
+			</tr>
+			<tr>
+				<td>02</td>
+				<td>陈子濡</td>
+				<td>优秀</td>
+			</tr>
+			<tr>
+				<td>4班</td>
+				<td>03</td>
+				<td>仇家斌</td>
+				<td>及格</td>
+				<td>优秀</td>
+				<td>良好</td>
+			</tr>
+		</table>
+	</body>
+</html>

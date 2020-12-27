@@ -3,16 +3,29 @@
 	<head>
 		<meta charset="utf-8">
 		<title>登录页面前端demo</title>
+		<link rel="shortcut icon" href="./source/img/icon.jpg">
 		<link rel="stylesheet" href="./source/css/bootstrap.min.css">
 		<link rel="stylesheet" href="./source/css/defaut_fountface.css">
 		<link rel="stylesheet" href="./source/css/style.css">
+		<script src="./source/js/boycott-ie.js" defer="defer"></script>
 	</head>
 
 	<body οndragstart='return false' onselectstart ='return false'>
+		<!-- 侧边栏 -->
+		<!-- 我知道SideBarView应当用js控制动画,但我现在还没学js... -->
+		<div id="SideBar" class="SideBarView2">
+			<div class="SideBarViewToolBar">
+				<div class="LeftAlign">
+					<a class="Back Bottom" title="返回" href="#">←</a>
+				</div>
+			</div>
+			<span>这是侧边栏</span>
+		</div>
+		<a class="Shadow" href="#"></a>
 		<!-- 头部工具栏 -->
 		<div id="Head">
 			<div class="LeftAlign">
-				<a class="SideBar Bottom Disabled" title="侧边工具栏" href="#SideBar">⚙</a>
+				<a class="SideBar Bottom" title="侧边工具栏" href="#SideBar">⚙</a>
 			</div>
 			<div class="RightAlign">
 				<a class="Home Bottom" title="访问首页" href="#HomePage">首页</a>
@@ -23,7 +36,6 @@
 		</div>
 		<!-- 中间内容 -->
 		<div id="Content">
-			<!--[if IE]> <div class="IE">请不要使用IE浏览器访问本网站!!!</div> <![endif]-->
 			<!-- 首页界面 -->
 			<div id="HomePage" class="HomeView">
 				<h1>这里是首页</h1>
@@ -43,6 +55,14 @@
 			<!-- 登录界面 -->
 			<div id="LoginPage" class="LoginView">
 				<span>登陆界面</span>
+				<div class="BetterCheckbox">
+					<input type="checkbox"/>
+					<img src="./source/img/1.svg">
+				</div>
+				<div class="BetterCheckbox">
+					<input type="checkbox"/>
+					<img src="./source/img/1.svg">
+				</div>
 			</div>
 			<!-- 登录界面 -->
 			<div id="RegisterPage" class="RegisterView">
@@ -52,11 +72,6 @@
 		<!-- 底部 -->
 		<div id="Footer">
 			<p>这里是页脚</p>
-		</div>
-
-		<!-- 侧边栏-懒得写了 -->
-		<div id="SideBar" class="SideBarView">
-			<span>这是侧边栏的遮罩层</span>
 		</div>
 	</body>
 </html>
